@@ -143,4 +143,136 @@ public class GalagaGUI extends JFrame {
         connectionPanel.add(portTextField);
     }
     //
+    public void setBoardPanel() {
+        boardPanel.removeAll();
+        boardPanel.setLayout(new BoxLayout(boardPanel, BoxLayout.Y_AXIS));
+        //Set Board Styles
+        Font font = new Font(Font.MONOSPACED, Font.BOLD, 24);
+        boardTextPane.setFont(font);
+        boardTextPane.setForeground(Color.GREEN);
+        boardTextPane.setBackground(Color.BLACK);
+        StyledDocument docBoard = boardTextPane.getStyledDocument();
+        SimpleAttributeSet centerBoard = new SimpleAttributeSet();
+        StyleConstants.setAlignment(centerBoard, StyleConstants.ALIGN_CENTER);
+        docBoard.setParagraphAttributes(0, docBoard.getLength(), centerBoard, false);
+        messageTextPane.setFont(font);
+        messageTextPane.setForeground(Color.CYAN);
+        messageTextPane.setBackground(Color.BLACK);
+        StyledDocument docMessage = messageTextPane.getStyledDocument();
+        SimpleAttributeSet centerMessage = new SimpleAttributeSet();
+        StyleConstants.setAlignment(centerMessage, StyleConstants.ALIGN_CENTER);
+        docMessage.setParagraphAttributes(0, docMessage.getLength(), centerMessage, false);
+
+        boardTextPane.setText("                    $$\\                               \n" +
+                "                    $$ |                              \n" +
+                " $$$$$$\\   $$$$$$\\  $$ | $$$$$$\\   $$$$$$\\   $$$$$$\\  \n" +
+                "$$  __$$\\  \\____$$\\ $$ | \\____$$\\ $$  __$$\\  \\____$$\\ \n" +
+                "$$ /  $$ | $$$$$$$ |$$ | $$$$$$$ |$$ /  $$ | $$$$$$$ |\n" +
+                "$$ |  $$ |$$  __$$ |$$ |$$  __$$ |$$ |  $$ |$$  __$$ |\n" +
+                "\\$$$$$$$ |\\$$$$$$$ |$$ |\\$$$$$$$ |\\$$$$$$$ |\\$$$$$$$ |\n" +
+                " \\____$$ | \\_______|\\__| \\_______| \\____$$ | \\_______|\n" +
+                "$$\\   $$ |                        $$\\   $$ |          \n" +
+                "\\$$$$$$  |                        \\$$$$$$  |          \n" +
+                " \\______/                          \\______/           \n");
+
+        messageTextPane.setText("================ Members ================\n" +
+                "|      Cerna Espiritu Roberto Alexis    |\n" +
+                "|        Cruz Coro Cristhian Elian      |\n" +
+                "|      Violeta Estrella Piero Alexis    |");
+
+        boardTextPane.setEditable(false);
+        messageTextPane.setEditable(false);
+        boardPanel.add(boardTextPane);
+        boardPanel.add(messageTextPane);
+        boardPanel.repaint();
+        boardPanel.revalidate();
+    }
+
+    public void setBoardText(String text) {
+        boardTextPane.setText(text);
+        boardPanel.repaint();
+        boardPanel.revalidate();
+    }
+
+    public void setMessageText(String text) {
+        messageTextPane.setText(text);
+        boardPanel.repaint();
+        boardPanel.revalidate();
+    }
+
+    public void homeRoom() {
+        ipAddresTextField.setEditable(true);
+        portTextField.setEditable(true);
+        startPanel.removeAll();
+        startPanel.add(createServerButton);
+        startPanel.add(joinGameButton);
+        startPanel.repaint();
+        startPanel.revalidate();
+        boardPanel.removeAll();
+        setBoardPanel();
+    }
+
+    public void waitRoomMaster() {
+        ipAddresTextField.setEditable(false);
+        portTextField.setEditable(false);
+        startPanel.removeAll();
+        startPanel.add(startGameButton);
+        startPanel.add(closeServerButton);
+        startPanel.repaint();
+        startPanel.revalidate();
+        boardPanel.removeAll();
+        boardPanel.add(messageTextPane);
+        boardPanel.add(boardTextPane);
+        boardPanel.repaint();
+        boardPanel.revalidate();
+        setMessageText("|   A - move left   |  K - pew pew pew  |\n" +
+                "|   D - move right  |  Q - quit game    |\n" +
+                "============= Instructions ==============");
+    }
+
+    public void waitRoomSlave() {
+        ipAddresTextField.setEditable(false);
+        portTextField.setEditable(false);
+        startPanel.removeAll();
+        startPanel.add(exitGameButton);
+        startPanel.repaint();
+        startPanel.revalidate();
+        boardPanel.removeAll();
+        boardPanel.add(messageTextPane);
+        boardPanel.add(boardTextPane);
+        boardPanel.repaint();
+        boardPanel.revalidate();
+        setMessageText("|   A - move left   |  K - pew pew pew  |\n" +
+                "|   D - move right  |  Q - quit game    |\n" +
+                "============= Instructions ==============");
+        setAllFocusable(false);
+        this.requestFocus();
+    }
+
+    public void startGame() {
+        startPanel.remove(startGameButton);
+        startPanel.repaint();
+        startPanel.revalidate();
+        if(galaga.tcpClient != null)    galaga.tcpClient.sendMessage("start");
+        setAllFocusable(false);
+        this.requestFocus();
+    }
+
+    public void setAllFocusable(boolean flag) {
+        connectionPanel.setFocusable(flag);
+        ipAddressLabel.setFocusable(flag);
+        ipAddresTextField.setFocusable(flag);
+        portLabel.setFocusable(flag);
+        portTextField.setFocusable(flag);
+        startPanel.setFocusable(flag);
+        createServerButton.setFocusable(flag);
+        joinGameButton.setFocusable(flag);
+        startGameButton.setFocusable(flag);
+        exitGameButton.setFocusable(flag);
+        closeServerButton.setFocusable(flag);
+        boardPanel.setFocusable(flag);
+        boardTextPane.setFocusable(flag);
+        messageTextPane.setFocusable(flag);
+    }
+
 }
