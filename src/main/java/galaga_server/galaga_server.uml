@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>galaga_server</OriginalElement>
+  <nodes>
+    <node x="343.5" y="-701.0">galaga_server.GalagaGameStatus</node>
+    <node x="541.0" y="-540.0">galaga_server.TCPServer</node>
+    <node x="491.5" y="-311.0">galaga_server.GalagaServer</node>
+    <node x="276.0" y="-894.0">galaga_server.Ship</node>
+    <node x="541.5" y="-723.0">galaga_server.TCPServerThread</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="galaga_server.GalagaServer" target="galaga_server.TCPServer" relationship="CREATE">
+      <point x="-51.5" y="-104.5" />
+      <point x="543.0" y="-332.0" />
+      <point x="589.5" y="-332.0" />
+      <point x="589.5" y="-342.0" />
+      <point x="627.75" y="-342.0" />
+      <point x="-86.75" y="83.5" />
+    </edge>
+    <edge source="galaga_server.TCPServer" target="galaga_server.GalagaGameStatus" relationship="TO_ONE">
+      <point x="-86.74999999999994" y="-83.5" />
+      <point x="627.75" y="-561.0" />
+      <point x="709.5" y="-561.0" />
+      <point x="709.5" y="-571.0" />
+      <point x="438.0" y="-571.0" />
+      <point x="438.0" y="-581.0" />
+      <point x="477.0" y="-581.0" />
+      <point x="44.5" y="38.5" />
+    </edge>
+    <edge source="galaga_server.GalagaServer" target="galaga_server.TCPServer" relationship="TO_ONE">
+      <point x="51.5" y="-104.5" />
+      <point x="646.0" y="-332.0" />
+      <point x="600.0" y="-332.0" />
+      <point x="600.0" y="-352.0" />
+      <point x="801.25" y="-352.0" />
+      <point x="86.75000000000006" y="83.5" />
+    </edge>
+    <edge source="galaga_server.GalagaGameStatus" target="galaga_server.Ship" relationship="CREATE">
+      <point x="-44.5" y="-38.5" />
+      <point x="388.0" y="-748.0" />
+      <point x="354.25" y="-748.0" />
+      <point x="-78.25" y="60.5" />
+    </edge>
+    <edge source="galaga_server.TCPServer" target="galaga_server.TCPServerThread" relationship="CREATE">
+      <point x="86.75000000000006" y="-83.5" />
+      <point x="86.5" y="60.5" />
+    </edge>
+    <edge source="galaga_server.GalagaServer" target="galaga_server.GalagaGameStatus" relationship="CREATE">
+      <point x="-51.5" y="-104.5" />
+      <point x="543.0" y="-332.0" />
+      <point x="589.5" y="-332.0" />
+      <point x="589.5" y="-342.0" />
+      <point x="427.0" y="-342.0" />
+      <point x="427.0" y="-561.0" />
+      <point x="388.0" y="-561.0" />
+      <point x="-44.5" y="38.5" />
+    </edge>
+    <edge source="galaga_server.GalagaServer" target="galaga_server.GalagaGameStatus" relationship="TO_ONE">
+      <point x="51.5" y="-104.5" />
+      <point x="646.0" y="-332.0" />
+      <point x="600.0" y="-332.0" />
+      <point x="600.0" y="-352.0" />
+      <point x="438.0" y="-352.0" />
+      <point x="438.0" y="-581.0" />
+      <point x="477.0" y="-581.0" />
+      <point x="44.5" y="38.5" />
+    </edge>
+    <edge source="galaga_server.TCPServer" target="galaga_server.TCPServerThread" relationship="TO_MANY">
+      <point x="-86.74999999999994" y="-83.5" />
+      <point x="627.75" y="-561.0" />
+      <point x="709.5" y="-561.0" />
+      <point x="709.5" y="-581.0" />
+      <point x="628.0" y="-581.0" />
+      <point x="-86.5" y="60.5" />
+    </edge>
+    <edge source="galaga_server.Ship" target="galaga_server.GalagaGameStatus" relationship="TO_ONE">
+      <point x="78.25" y="60.5" />
+      <point x="510.75" y="-748.0" />
+      <point x="477.0" y="-748.0" />
+      <point x="44.5" y="-38.5" />
+    </edge>
+    <edge source="galaga_server.GalagaGameStatus" target="galaga_server.Ship" relationship="TO_MANY">
+      <point x="44.5" y="-38.5" />
+      <point x="477.0" y="-748.0" />
+      <point x="510.75" y="-748.0" />
+      <point x="78.25" y="60.5" />
+    </edge>
+    <edge source="galaga_server.TCPServerThread" target="galaga_server.TCPServer" relationship="TO_ONE">
+      <point x="-86.5" y="60.5" />
+      <point x="628.0" y="-581.0" />
+      <point x="709.5" y="-581.0" />
+      <point x="709.5" y="-561.0" />
+      <point x="627.75" y="-561.0" />
+      <point x="-86.74999999999994" y="-83.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0775862068965518" showDependencies="true" x="592.0" y="-497.36" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
