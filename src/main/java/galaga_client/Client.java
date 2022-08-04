@@ -1,5 +1,4 @@
 package galaga_client;
-import com.galaga_game.Galaga;
 public class Client {
     public static void main(String[] args) {
         //GalagaGUI galagaGUI = new GalagaGUI();
