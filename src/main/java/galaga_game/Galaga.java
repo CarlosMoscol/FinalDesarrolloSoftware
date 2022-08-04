@@ -244,3 +244,276 @@ class Game extends Thread {
 
 }
 
+class Ship extends Thread {
+    public char symbol;
+    public int xPos;
+    public int status;
+    private Board board;
+    private boolean willShot = false;
+
+    // Copia la referencia a Board y Laser, y dibuja la posicion inicial de la nave
+    Ship(char symbol, int xPos, int status, Board board) {
+        this.symbol = symbol;
+        this.xPos = xPos;
+        board.line9[xPos] = '^';
+        board.line10[xPos] = symbol;
+        this.status = status;
+        this.board = board;
+    }
+
+    @Override
+    public void run() {
+        while(status == 1) {
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void boom() throws InterruptedException {
+        char[] ypos;
+        ypos = board.boardList.get(9); // Fila donde se encuentra la bomba
+        ypos[xPos] = 'o';
+        Thread.sleep(50);
+        if (xPos  - 1 >= 0) ypos[xPos  - 1] = 'o';
+        if (xPos  + 1 <= board.width) ypos[xPos  + 1] = 'o';
+        Thread.sleep(50);
+        ypos[xPos ] = ' ';
+        if (xPos  - 2 >= 0) ypos[xPos  - 2] = 'o';
+        if (xPos  + 2 <= board.width) ypos[xPos  + 2] = 'o';
+        Thread.sleep(50);
+        if (xPos -1 >= 0) ypos[xPos - 1] = ' ';
+        if (xPos + 1 <= board.width) ypos[xPos + 1] = ' ';
+        Thread.sleep(50);
+        if (xPos - 2 >= 0) ypos[xPos - 2] = ' ';
+        if (xPos + 2 <= board.width) ypos[xPos + 2] = ' ';
+        Thread.sleep(50);
+        board.line9[xPos] = ' ';
+        board.line10[xPos] = ' ';
+        this.status = 0;
+    }
+
+    public void moveTo(int xPos) {
+        board.line9[this.xPos] = ' ';
+        board.line10[this.xPos] = ' ';
+
+        this.xPos = xPos;
+
+        if (status != 0) {
+            board.line9[this.xPos] = '^';
+            board.line10[this.xPos] = symbol;
+        }
+        else {
+            board.line9[this.xPos] = ' ';
+            board.line10[this.xPos] = ' ';
+        }
+    }
+
+    public void shoot() {
+        if(!willShot) {
+            willShot = true;
+            new Thread(new Laser(xPos)).start();
+        }
+
+        //Rafaga de disparos
+        //new Thread(new Laser(xPos)).start();
+
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    class Laser extends Thread {
+        private final int laserColumnPos;
+
+        Laser(int laserColumnPos) {
+            this.laserColumnPos = laserColumnPos;
+        }
+
+        @Override
+        public void run() {
+            try{
+                int k = 100;
+                char[] currentLaserRow;
+                for (int i = board.height - 3; i >= 0; i--) {
+                    //Obtiene la fila donde se encuentra el disparo
+                    currentLaserRow = board.boardList.get(i);
+                    // Si el disparo llega a un enemigo, lo destruye y termina su trayectoria
+                    if (currentLaserRow[laserColumnPos] == '*'){
+                        currentLaserRow[laserColumnPos] = ' ';
+                        break;
+                    }
+                    //Dibuja el disparo antes del retardo
+                    currentLaserRow[laserColumnPos] = '\'';
+                    Thread.sleep(k);
+                    //Borra el disparo luego del retardo
+                    currentLaserRow[laserColumnPos] = ' ';
+                }
+            }
+            catch (InterruptedException err) {
+                err.printStackTrace();
+            }
+            willShot = false;
+        }
+    }
+}
+
+
+class Swarm extends Thread {
+    private Board board;
+    public int xpos;
+    public int ypos;
+
+    Swarm(Board board){
+        this.board = board;
+        // Dibuja el conjunto de naves enemigas de dos lineas
+        for (int i = 15; i < 26; i++)	board.line0[i] = '*';
+        for (int i = 16; i < 25; i++)	board.line1[i] = '*';
+        // Posicion inicial del frente de las naves enemigas
+        board.swarmFrontPos = 1;
+        // Define la posicion del frente y la izquierda del conjunto de naves enemigas
+        this.ypos = 1;
+        this.xpos = 15;
+    }
+
+    @Override
+    public void run() {
+        // Velocidad de movimiento de las naves
+        int speed = 250;
+        try {
+            Thread.sleep(speed);
+            // El movimiento del conjunto de naves es desde el centro -> izquierda -> centro -> derecha -> abajo
+            // hasta que llegue al fondo (demora 8 iteraciones)
+            for (int i = 0; i < board.height - 3; i++) { // De acuerto a la pantalla y el tamaño de la nave
+                for (int j = 0; j < 5; j++) {
+                    moveSwarmLeft();
+                    this.xpos--;
+                    Thread.sleep(speed);
+                }
+                for (int j = 0; j < 10; j++) {
+                    moveSwarmRight();
+                    this.xpos++;
+                    Thread.sleep(speed);
+                }
+                for (int j = 0; j < 5; j++) {
+                    moveSwarmLeft();
+                    this.xpos--;
+                    Thread.sleep(speed);
+                }
+                moveSwarmDown();
+                this.ypos++;
+                Thread.sleep(speed);
+            }
+        }
+        catch (InterruptedException err){
+            err.printStackTrace();
+        }
+    }
+
+    public synchronized void moveSwarmLeft(){
+        char[] frontArmy = board.boardList.get(board.swarmFrontPos);
+        char[] backArmy = board.boardList.get(board.swarmFrontPos -1);
+        for (int i = 0; i < board.width - 1; i++){
+            // Si se disparó a una nave, se elimina su dibujo
+            if (frontArmy[i + 1] == '\'') frontArmy[i + 1] = ' ';
+            if (backArmy[i + 1] == '\'') backArmy[i + 1] = ' ';
+            // Dibuja el desplazamiento
+            frontArmy[i] = frontArmy[i + 1];
+            backArmy[i] = backArmy[i + 1];
+        }
+        frontArmy[board.width - 1] = ' ';
+        backArmy[board.width - 1] = ' ';
+    }
+
+    public synchronized void moveSwarmRight(){
+        char[] frontArmy = board.boardList.get(board.swarmFrontPos);
+        char[] backArmy = board.boardList.get(board.swarmFrontPos -1);
+        for (int i = board.width - 1; i > 0; i--){
+            if (frontArmy[i - 1] == '\'') frontArmy[i - 1] = ' ';
+            if (backArmy[i - 1] == '\'') backArmy[i - 1] = ' ';
+            frontArmy[i] = frontArmy[i - 1];
+            backArmy[i] = backArmy[i - 1];
+        }
+        frontArmy[0] = ' ';
+        backArmy[0] = ' ';
+    }
+
+    public synchronized void moveSwarmDown(){
+        char[] frontArmy = board.boardList.get(board.swarmFrontPos);
+        char[] backArmy = board.boardList.get(board.swarmFrontPos - 1);
+        if(board.swarmFrontPos != board.height - 3){
+            char[] newFront = board.boardList.get(board.swarmFrontPos + 1);
+            System.arraycopy(frontArmy, 0, newFront, 0, board.width);
+            System.arraycopy(backArmy, 0, frontArmy, 0, board.width);
+            for (int i = 0; i < board.width; i++)	backArmy[i] = ' ';
+            board.swarmFrontPos++;
+        }
+        else {
+            // Si el conjunto de naves llega hasta el fondo, el jugador pierde
+            for(int i = 0; i < board.width; i++)	board.line9[i] = board.line8[i];
+            for (int i = 0; i < board.width; i++){
+                board.line8[i] = board.line7[i];
+                board.line7[i] = ' ';
+            }
+            board.shipState = 0;
+        }
+    }
+}
+
+
+class Bomb extends Thread {
+    private Board board;
+    private Swarm swarm;
+    private TCPClient tcpClient;
+    private Galaga galaga;
+
+    Bomb(Board board, Swarm swarm, TCPClient tcpClient, Galaga galaga) {
+        this.board = board;
+        this.swarm = swarm;
+        this.tcpClient = tcpClient;
+        this.galaga = galaga;
+    }
+
+    @Override
+    public void run() {
+        while(true) {
+            try{
+                // Cada 200 ms el conjunto de naves disparará
+                Thread.sleep(200);
+                pew();
+            }
+            catch(InterruptedException err) {}
+        }
+    }
+
+    private synchronized void pew() {
+        try {
+            int k = 300; //Velocidad del disparo entre filas
+            char[] ypos;
+            int xPos = ThreadLocalRandom.current().nextInt(swarm.xpos, swarm.xpos + 11); //Genera un lugar entre la nave para el disparo - cambiar el 11
+            for (int i = 1; swarm.ypos + i < board.height; i++){
+                ypos = board.boardList.get(swarm.ypos + i); // Fila donde se encuentra la bomba
+                // Si la bomba alcanza al jugador, se hace un efecto de explosion
+                if (ypos[xPos] != ' ') {
+                    if(tcpClient != null) {
+                        //tcpClient.sendMessage("died " + board.boardList.get(swarm.ypos + i + 1)[xPos]);
+                        if(swarm.ypos + i == board.height - 2)	tcpClient.sendMessage("died " + board.boardList.get(swarm.ypos + i + 1)[xPos]);
+                        if(swarm.ypos + i == board.height - 1)	tcpClient.sendMessage("died " + board.boardList.get(swarm.ypos + i)[xPos]);
+                    }
+                    galaga.status = 0;
+                    break;
+                }
+                // Dibuja la bomba, y luego de un retardo la borra
+                ypos[xPos ] = '\"';
+                Thread.sleep(k);
+                ypos[xPos ] = ' ';
+            }
+        }
+        catch (InterruptedException err) {
+            err.printStackTrace();
+        }
+    }
+}
