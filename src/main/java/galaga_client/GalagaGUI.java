@@ -176,9 +176,9 @@ public class GalagaGUI extends JFrame {
                 " \\______/                          \\______/           \n");
 
         messageTextPane.setText("================ Members ================\n" +
-                "|      Cerna Espiritu Roberto Alexis    |\n" +
-                "|        Cruz Coro Cristhian Elian      |\n" +
-                "|      Violeta Estrella Piero Alexis    |");
+                "|      Carlos Moscol    |\n" +
+                "|    Luis De la cruz    |\n" +
+                "|      Kenjhy Bazan     |");
 
         boardTextPane.setEditable(false);
         messageTextPane.setEditable(false);
