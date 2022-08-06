@@ -1,318 +1,263 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>JAVA</ID>
-  <OriginalElement>C:/Users/a10/Desktop/Finbal_DesSoft/src/main/java</OriginalElement>
+  <OriginalElement>C:/Users/a10/Desktop/Finbal_DesSoft/fin_clone/src/main/java</OriginalElement>
   <nodes>
-    <node x="276.5" y="1052.0">galaga_game.Game</node>
-    <node x="18.117268041237082" y="530.0">galaga_game.Board</node>
-    <node x="570.5798969072164" y="131.0">galaga_server.GalagaGameStatus</node>
-    <node x="121.45489690721644" y="1246.0">galaga_game.Galaga</node>
-    <node x="366.2603092783505" y="475.0">galaga_server.GalagaServer</node>
-    <node x="564.0798969072165" y="-39.0">galaga_server.Ship</node>
-    <node x="-41.0" y="768.5">galaga_game.Swarm</node>
-    <node x="160.0" y="779.5">galaga_client.TCPClient</node>
-    <node x="79.49999999999997" y="1018.0">galaga_game.Ship</node>
-    <node x="365.57989690721644" y="109.0">galaga_server.TCPServerThread</node>
-    <node x="140.95489690721644" y="1439.0">galaga_client.Client</node>
-    <node x="366.0" y="713.0">galaga_client.GalagaGUI</node>
-    <node x="-104.0" y="1063.0">galaga_game.Bomb</node>
-    <node x="334.07989690721644" y="269.0">galaga_server.TCPServer</node>
+    <node x="715.1002778641114" y="36.250784351258346">galaga_client.GalagaGUI</node>
+    <node x="420.88093796233943" y="593.1934130505001">galaga_game.Board</node>
+    <node x="-108.53554097783797" y="919.135185085662">galaga_game.Ship</node>
+    <node x="450.26348878106023" y="212.2516410153384">galaga_game.Galaga</node>
+    <node x="715.1002778641114" y="-256.8572438103143">galaga_client.GalagaGUI_interfaz</node>
+    <node x="-367.38751074980485" y="144.38724090962052">galaga_server.TCPServer</node>
+    <node x="-348.5640644221212" y="388.37842156286547">galaga_server.TCPServerThread</node>
+    <node x="108.15060647530328" y="952.135185085662">galaga_game.Bomb</node>
+    <node x="-30.73040617716589" y="111.38724090962052">galaga_server.GalagaServer</node>
+    <node x="265.76348878106023" y="124.25078435125835">galaga_server.GalagaGameStatus</node>
+    <node x="796.6228767341679" y="337.65507807132497">galaga_client.Client</node>
+    <node x="183.48122044821503" y="606.115998899398">galaga_game.Game</node>
+    <node x="78.65011769424308" y="388.37842156286547">galaga_client.TCPClient</node>
+    <node x="608.5510132130465" y="908.1351850856618">galaga_game.Swarm</node>
+    <node x="265.76348878106023" y="930.1351850856618">galaga_server.Ship</node>
   </nodes>
   <notes />
   <edges>
     <edge source="galaga_game.Swarm" target="galaga_game.Board" relationship="TO_ONE">
-      <point x="0.0" y="-60.0" />
-      <point x="49.0" y="692.0" />
-      <point x="53.36726804123708" y="692.0" />
-      <point x="-35.25" y="38.0" />
-    </edge>
-    <edge source="galaga_game.Bomb" target="galaga_game.Galaga" relationship="TO_ONE">
-      <point x="-26.25" y="38.0" />
-      <point x="-77.75" y="1215.0" />
-      <point x="6.079896907216494" y="1215.0" />
-      <point x="6.079896907216494" y="1225.0" />
-      <point x="168.45489690721644" y="1225.0" />
-      <point x="-47.0" y="-71.5" />
+      <point x="-90.00001321304649" y="-1.8508566176933527E-4" />
+      <point x="585.0" y="968.135" />
+      <point x="585.0" y="631.193" />
+      <point x="70.50006203766054" y="-4.1305050012852007E-4" />
     </edge>
     <edge source="galaga_game.Galaga" target="galaga_game.Bomb" relationship="TO_ONE">
-      <point x="-47.0" y="-71.5" />
-      <point x="168.45489690721644" y="1225.0" />
-      <point x="6.079896907216494" y="1225.0" />
-      <point x="6.079896907216494" y="1215.0" />
-      <point x="-77.75" y="1215.0" />
-      <point x="-26.25" y="38.0" />
+      <point x="94.0" y="15.000358984661602" />
+      <point x="963.1228767341679" y="298.252" />
+      <point x="963.1228767341679" y="1108.635" />
+      <point x="130.651" y="1108.635" />
+      <point x="-29.999606475303267" y="38.0" />
+    </edge>
+    <edge source="galaga_game.Bomb" target="galaga_game.Galaga" relationship="TO_ONE">
+      <point x="-14.999606475303267" y="37.999814914338" />
+      <point x="145.651" y="1093.635" />
+      <point x="821.051" y="1093.635" />
+      <point x="821.051" y="476.0" />
+      <point x="657.0" y="476.0" />
+      <point x="657.0" y="268.252" />
+      <point x="93.9995112189398" y="-14.999641015338398" />
     </edge>
     <edge source="galaga_game.Game" target="galaga_client.GalagaGUI" relationship="TO_ONE">
-      <point x="0.0" y="-49.0" />
-      <point x="355.5" y="996.0" />
-      <point x="238.76030927835052" y="996.0" />
-      <point x="238.76030927835052" y="966.0" />
-      <point x="413.25" y="966.0" />
-      <point x="-47.25" y="115.5" />
+      <point x="18.66877955178495" y="-48.999998899398065" />
+      <point x="281.15" y="195.0" />
+      <point x="461.263" y="195.0" />
+      <point x="461.263" y="136.251" />
+      <point x="-104.00027786411135" y="-14.999784351258342" />
     </edge>
     <edge source="galaga_game.Galaga" target="galaga_client.GalagaGUI" relationship="CREATE">
-      <point x="47.0" y="-71.5" />
-      <point x="262.45489690721644" y="1225.0" />
-      <point x="432.2048969072164" y="1225.0" />
-      <point x="432.2048969072164" y="1205.0" />
-      <point x="507.75" y="1205.0" />
-      <point x="47.25" y="115.5" />
+      <point x="94.0" y="-29.999641015338398" />
+      <point x="-104.0" y="102.00121564874166" />
     </edge>
     <edge source="galaga_game.Bomb" target="galaga_game.Board" relationship="TO_ONE">
-      <point x="0.0" y="-38.0" />
-      <point x="-51.5" y="692.0" />
-      <point x="53.36726804123708" y="692.0" />
-      <point x="-35.25" y="38.0" />
+      <point x="3.935246967330386E-4" y="-38.000185085662" />
+      <point x="160.651" y="554.5" />
+      <point x="381.0" y="554.5" />
+      <point x="381.0" y="731.0" />
+      <point x="585.0" y="731.0" />
+      <point x="585.0" y="631.193" />
+      <point x="70.50006203766054" y="-4.1305050012852007E-4" />
     </edge>
     <edge source="galaga_client.Client" target="galaga_game.Galaga" relationship="CREATE">
-      <point x="0.0" y="-27.0" />
-      <point x="0.0" y="71.5" />
+      <point x="-74.5" y="-17.903437055986558" />
+      <point x="94.0" y="63.5" />
     </edge>
     <edge source="galaga_server.GalagaServer" target="galaga_server.GalagaGameStatus" relationship="CREATE">
-      <point x="51.5" y="-93.0" />
-      <point x="520.7603092783505" y="454.0" />
-      <point x="631.5103092783505" y="454.0" />
-      <point x="632.0103092783505" y="248.0" />
-      <point x="704.0798969072164" y="248.0" />
-      <point x="44.5" y="27.0" />
+      <point x="103.0" y="-53.13645655836217" />
+      <point x="-89.0" y="-0.0" />
     </edge>
     <edge source="galaga_server.TCPServer" target="galaga_server.TCPServerThread" relationship="TO_MANY">
-      <point x="62.0" y="-72.0" />
-      <point x="520.0798969072164" y="248.0" />
-      <point x="427.7603092783505" y="248.0" />
-      <point x="427.7603092783505" y="228.0" />
-      <point x="504.3298969072164" y="228.0" />
-      <point x="46.25" y="49.0" />
+      <point x="-40.176553672316345" y="60.0" />
+      <point x="-15.0" y="-49.0" />
     </edge>
     <edge source="galaga_game.Game" target="galaga_game.Board" relationship="TO_ONE">
-      <point x="0.0" y="-49.0" />
-      <point x="355.5" y="692.0" />
-      <point x="53.36726804123708" y="692.0" />
-      <point x="-35.25" y="38.0" />
+      <point x="78.99977955178497" y="1.1006019349224516E-6" />
+      <point x="381.0" y="655.116" />
+      <point x="381.0" y="731.0" />
+      <point x="585.0" y="731.0" />
+      <point x="585.0" y="631.193" />
+      <point x="70.50006203766054" y="-4.1305050012852007E-4" />
     </edge>
     <edge source="galaga_server.Ship" target="galaga_server.GalagaGameStatus" relationship="TO_ONE">
-      <point x="47.75" y="49.0" />
-      <point x="707.3298969072165" y="84.0" />
-      <point x="704.0798969072165" y="84.0" />
-      <point x="44.50000000000006" y="-27.0" />
+      <point x="-4.887810602554055E-4" y="-49.00018508566177" />
+      <point x="361.263" y="731.0" />
+      <point x="-63.0" y="731.0" />
+      <point x="-63.0" y="93.887" />
+      <point x="354.763" y="93.887" />
+      <point x="-4.887810602554055E-4" y="-26.99978435125834" />
     </edge>
     <edge source="galaga_server.GalagaGameStatus" target="galaga_server.Ship" relationship="TO_MANY">
-      <point x="44.50000000000006" y="-27.0" />
-      <point x="704.0798969072165" y="84.0" />
-      <point x="707.3298969072165" y="84.0" />
-      <point x="47.75" y="49.0" />
+      <point x="-15.000488781060255" y="-27.0" />
+      <point x="339.763" y="43.750784351258346" />
+      <point x="-399.88751074980485" y="43.750784351258346" />
+      <point x="-399.88751074980485" y="1138.635" />
+      <point x="346.26348878106023" y="1138.635" />
+      <point x="-15.0" y="49.0" />
     </edge>
     <edge source="galaga_game.Galaga" target="galaga_game.Board" relationship="CREATE">
-      <point x="47.0" y="-71.5" />
-      <point x="262.45489690721644" y="1225.0" />
-      <point x="432.2048969072164" y="1225.0" />
-      <point x="432.2048969072164" y="1205.0" />
-      <point x="565.5" y="1205.0" />
-      <point x="565.5" y="682.0" />
-      <point x="123.86726804123708" y="682.0" />
-      <point x="35.25" y="38.0" />
+      <point x="-52.8825508187208" y="71.0" />
+      <point x="-0.0" y="-38.0" />
+    </edge>
+    <edge source="galaga_client.GalagaGUI" target="galaga_client.GalagaGUI_interfaz" relationship="REALIZATION">
+      <point x="-104.0" y="-107.5" />
+      <point x="652.0902091710025" y="43.750784351258346" />
+      <point x="652.0902091710025" y="-113.6355956651476" />
+      <point x="104.0" y="28.221648145166682" />
     </edge>
     <edge source="galaga_server.TCPServerThread" target="galaga_server.TCPServer" relationship="TO_ONE">
-      <point x="46.25" y="49.0" />
-      <point x="504.3298969072164" y="228.0" />
-      <point x="427.7603092783505" y="228.0" />
-      <point x="427.7603092783505" y="248.0" />
-      <point x="520.0798969072164" y="248.0" />
-      <point x="62.0" y="-72.0" />
+      <point x="92.5000644221212" y="-4.215628654833381E-4" />
+      <point x="-79.0" y="437.378" />
+      <point x="-79.0" y="219.387" />
+      <point x="136.49951074980484" y="14.999759090379484" />
     </edge>
     <edge source="galaga_server.TCPServer" target="galaga_server.GalagaGameStatus" relationship="TO_ONE">
-      <point x="62.0" y="-72.0" />
-      <point x="520.0798969072164" y="248.0" />
-      <point x="427.7603092783505" y="248.0" />
-      <point x="427.7603092783505" y="238.0" />
-      <point x="621.0103092783505" y="238.0" />
-      <point x="621.0103092783505" y="228.0" />
-      <point x="615.0798969072164" y="228.0" />
-      <point x="-44.5" y="27.0" />
+      <point x="136.49951074980484" y="-2.4090962051559472E-4" />
+      <point x="-63.0" y="204.38699999999994" />
+      <point x="-63.0" y="93.887" />
+      <point x="354.763" y="93.887" />
+      <point x="-4.887810602554055E-4" y="-26.99978435125834" />
     </edge>
     <edge source="galaga_client.GalagaGUI" target="galaga_server.GalagaServer" relationship="CREATE">
-      <point x="0.0" y="-115.5" />
-      <point x="460.5" y="692.0" />
-      <point x="469.2603092783505" y="692.0" />
-      <point x="0.0" y="93.0" />
-    </edge>
-    <edge source="galaga_game.Galaga" target="galaga_game.Game" relationship="CREATE">
-      <point x="47.0" y="-71.5" />
-      <point x="262.45489690721644" y="1225.0" />
-      <point x="432.2048969072164" y="1225.0" />
-      <point x="432.2048969072164" y="1205.0" />
-      <point x="395.0" y="1205.0" />
-      <point x="39.5" y="49.0" />
+      <point x="-104.0" y="-72.36378435125835" />
+      <point x="72.26959382283411" y="78.887" />
+      <point x="-0.0" y="-93.0" />
     </edge>
     <edge source="galaga_game.Bomb" target="galaga_client.TCPClient" relationship="TO_ONE">
-      <point x="0.0" y="-38.0" />
-      <point x="-51.5" y="996.0" />
-      <point x="20.26030927835052" y="996.0" />
-      <point x="20.26030927835052" y="976.0" />
-      <point x="206.25" y="976.0" />
-      <point x="-46.25" y="49.0" />
+      <point x="-52.49960647530328" y="-1.8508566199670895E-4" />
+      <point x="61.150000000000006" y="990.135" />
+      <point x="61.150000000000006" y="371.0" />
+      <point x="171.15" y="371.0" />
+      <point x="-1.1769424307317422E-4" y="-49.00042156286548" />
+    </edge>
+    <edge source="galaga_game.Galaga" target="galaga_game.Game" relationship="CREATE">
+      <point x="-67.8825508187208" y="71.0" />
+      <point x="476.38093796233943" y="575.6934130505001" />
+      <point x="296.15" y="575.6934130505001" />
+      <point x="33.66877955178495" y="-49.0" />
     </edge>
     <edge source="galaga_game.Galaga" target="galaga_game.Ship" relationship="CREATE">
-      <point x="47.0" y="-71.5" />
-      <point x="262.45489690721644" y="1225.0" />
-      <point x="432.2048969072164" y="1225.0" />
-      <point x="432.2048969072164" y="1205.0" />
-      <point x="184.5" y="1205.0" />
-      <point x="35.0" y="83.0" />
+      <point x="-94.0" y="31.63559989428211" />
+      <point x="-38.23040617716589" y="314.8872409096205" />
+      <point x="-1.6948651993279213" y="-71.0" />
     </edge>
     <edge source="galaga_server.GalagaServer" target="galaga_server.GalagaGameStatus" relationship="TO_ONE">
-      <point x="-51.5" y="-93.0" />
-      <point x="417.7603092783505" y="454.0" />
-      <point x="459.36726804123714" y="454.0" />
-      <point x="459.36726804123714" y="444.0" />
-      <point x="621.0103092783505" y="444.0" />
-      <point x="621.0103092783505" y="228.0" />
-      <point x="615.0798969072164" y="228.0" />
-      <point x="-44.5" y="27.0" />
+      <point x="-102.99959382283411" y="-2.4090962051559472E-4" />
+      <point x="-63.0" y="204.387" />
+      <point x="-63.0" y="93.887" />
+      <point x="354.763" y="93.887" />
+      <point x="-4.887810602554055E-4" y="-26.99978435125834" />
     </edge>
     <edge source="galaga_game.Bomb" target="galaga_game.Swarm" relationship="TO_ONE">
-      <point x="0.0" y="-38.0" />
-      <point x="-51.5" y="986.0" />
-      <point x="-114.5" y="986.0" />
-      <point x="-114.5" y="976.0" />
-      <point x="4.0" y="976.0" />
-      <point x="-45.0" y="60.0" />
+      <point x="3.935246967330386E-4" y="37.999814914338" />
+      <point x="160.651" y="1078.635" />
+      <point x="806.051" y="1078.635" />
+      <point x="806.051" y="537.5" />
+      <point x="697.6" y="537.5" />
+      <point x="-0.9510132130465081" y="-60.00018508566177" />
     </edge>
     <edge source="galaga_game.Galaga" target="galaga_client.TCPClient" relationship="CREATE">
-      <point x="47.0" y="-71.5" />
-      <point x="262.45489690721644" y="1225.0" />
-      <point x="432.2048969072164" y="1225.0" />
-      <point x="432.2048969072164" y="1205.0" />
-      <point x="463.7603092783505" y="1205.0" />
-      <point x="463.7603092783505" y="976.0" />
-      <point x="298.75" y="976.0" />
-      <point x="46.25" y="49.0" />
+      <point x="-94.0" y="61.63559989428211" />
+      <point x="156.15" y="344.8872409096205" />
+      <point x="-15.000117694243073" y="-49.0" />
     </edge>
     <edge source="galaga_game.Galaga" target="galaga_client.GalagaGUI" relationship="TO_ONE">
-      <point x="-47.0" y="-71.5" />
-      <point x="168.45489690721644" y="1225.0" />
-      <point x="6.079896907216494" y="1225.0" />
-      <point x="6.079896907216494" y="1215.0" />
-      <point x="238.76030927835052" y="1215.0" />
-      <point x="238.76030927835052" y="966.0" />
-      <point x="413.25" y="966.0" />
-      <point x="-47.25" y="115.5" />
+      <point x="-4.88781060198562E-4" y="-70.9996410153384" />
+      <point x="544.263" y="195.0" />
+      <point x="461.263" y="195.0" />
+      <point x="461.263" y="136.251" />
+      <point x="-104.00027786411135" y="-14.999784351258342" />
     </edge>
     <edge source="galaga_client.GalagaGUI" target="galaga_game.Galaga" relationship="TO_ONE">
-      <point x="-47.25" y="115.5" />
-      <point x="413.25" y="966.0" />
-      <point x="238.76030927835052" y="966.0" />
-      <point x="238.76030927835052" y="1215.0" />
-      <point x="6.079896907216494" y="1215.0" />
-      <point x="6.079896907216494" y="1225.0" />
-      <point x="168.45489690721644" y="1225.0" />
-      <point x="-47.0" y="-71.5" />
+      <point x="-104.00027786411135" y="2.156487416584696E-4" />
+      <point x="657.0" y="151.251" />
+      <point x="657.0" y="268.252" />
+      <point x="93.9995112189398" y="-14.999641015338398" />
     </edge>
     <edge source="galaga_game.Galaga" target="galaga_game.Swarm" relationship="CREATE">
-      <point x="47.0" y="-71.5" />
-      <point x="262.45489690721644" y="1225.0" />
-      <point x="432.2048969072164" y="1225.0" />
-      <point x="432.2048969072164" y="1205.0" />
-      <point x="453.7603092783505" y="1205.0" />
-      <point x="453.7603092783505" y="986.0" />
-      <point x="94.0" y="986.0" />
-      <point x="45.0" y="60.0" />
+      <point x="86.5" y="71.0" />
+      <point x="-67.7875244319863" y="-60.0" />
     </edge>
     <edge source="galaga_server.TCPServer" target="galaga_server.TCPServerThread" relationship="CREATE">
-      <point x="-62.0" y="-72.0" />
-      <point x="396.0798969072164" y="248.0" />
-      <point x="411.8298969072164" y="248.0" />
-      <point x="-46.25" y="49.0" />
+      <point x="-25.176553672316345" y="60.0" />
+      <point x="-0.0" y="-49.0" />
     </edge>
     <edge source="galaga_game.Galaga" target="galaga_game.Bomb" relationship="CREATE">
-      <point x="47.0" y="-71.5" />
-      <point x="262.45489690721644" y="1225.0" />
-      <point x="432.2048969072164" y="1225.0" />
-      <point x="432.2048969072164" y="1205.0" />
-      <point x="-25.25" y="1205.0" />
-      <point x="26.25" y="38.0" />
+      <point x="71.7875244319863" y="71.0" />
+      <point x="616.0510132130465" y="815.6351850856618" />
+      <point x="190.98122044821503" y="815.6351850856618" />
+      <point x="30.33061397291175" y="-38.0" />
     </edge>
     <edge source="galaga_game.Galaga" target="galaga_game.Ship" relationship="TO_MANY">
-      <point x="-47.0" y="-71.5" />
-      <point x="168.45489690721644" y="1225.0" />
-      <point x="6.079896907216494" y="1225.0" />
-      <point x="6.079896907216494" y="1215.0" />
-      <point x="114.49999999999997" y="1215.0" />
-      <point x="-35.0" y="83.0" />
+      <point x="-94.0" y="46.63559989428211" />
+      <point x="-23.23040617716589" y="329.8872409096205" />
+      <point x="13.305134800672079" y="-71.0" />
     </edge>
     <edge source="galaga_game.Galaga" target="galaga_client.TCPClient" relationship="TO_ONE">
-      <point x="-47.0" y="-71.5" />
-      <point x="168.45489690721644" y="1225.0" />
-      <point x="6.079896907216494" y="1225.0" />
-      <point x="6.079896907216494" y="1215.0" />
-      <point x="20.26030927835052" y="1215.0" />
-      <point x="20.26030927835052" y="976.0" />
-      <point x="206.25" y="976.0" />
-      <point x="-46.25" y="49.0" />
+      <point x="-4.88781060198562E-4" y="71.0003589846616" />
+      <point x="544.263" y="371.0" />
+      <point x="171.15" y="371.0" />
+      <point x="-1.1769424307317422E-4" y="-49.00042156286548" />
     </edge>
     <edge source="galaga_server.GalagaServer" target="galaga_server.TCPServer" relationship="CREATE">
-      <point x="51.5" y="-93.0" />
-      <point x="520.7603092783505" y="454.0" />
-      <point x="631.5103092783505" y="454.0" />
-      <point x="631.5103092783505" y="434.0" />
-      <point x="520.0798969072164" y="434.0" />
-      <point x="62.0" y="72.0" />
+      <point x="-103.0" y="-15.000240909620572" />
+      <point x="136.5" y="-15.000240909620572" />
     </edge>
     <edge source="galaga_server.GalagaServer" target="galaga_server.TCPServer" relationship="TO_ONE">
-      <point x="-51.5" y="-93.0" />
-      <point x="417.7603092783505" y="454.0" />
-      <point x="459.36726804123714" y="454.0" />
-      <point x="459.36726804123714" y="444.0" />
-      <point x="396.0798969072164" y="444.0" />
-      <point x="-62.0" y="72.0" />
+      <point x="-102.99959382283411" y="85.49975909037948" />
+      <point x="-79.0" y="289.887" />
+      <point x="-79.0" y="219.387" />
+      <point x="136.49951074980484" y="14.999759090379484" />
     </edge>
     <edge source="galaga_game.Ship" target="galaga_game.Board" relationship="TO_ONE">
-      <point x="0.0" y="-83.0" />
-      <point x="149.5" y="692.0" />
-      <point x="53.36726804123708" y="692.0" />
-      <point x="-35.25" y="38.0" />
+      <point x="71.99954097783797" y="55.499814914338" />
+      <point x="585.0" y="1045.635" />
+      <point x="585.0" y="631.193" />
+      <point x="70.50006203766054" y="-4.1305050012852007E-4" />
     </edge>
     <edge source="galaga_game.Galaga" target="galaga_game.Game" relationship="TO_ONE">
-      <point x="-47.0" y="-71.5" />
-      <point x="168.45489690721644" y="1225.0" />
-      <point x="6.079896907216494" y="1225.0" />
-      <point x="6.079896907216494" y="1215.0" />
-      <point x="316.0" y="1215.0" />
-      <point x="-39.5" y="49.0" />
+      <point x="-82.8825508187208" y="71.0" />
+      <point x="461.38093796233943" y="522.5" />
+      <point x="256.1501176942431" y="522.5" />
+      <point x="-6.3311027539719475" y="-49.0" />
     </edge>
     <edge source="galaga_server.GalagaGameStatus" target="galaga_server.Ship" relationship="CREATE">
-      <point x="-44.49999999999994" y="-27.0" />
-      <point x="615.0798969072165" y="84.0" />
-      <point x="611.8298969072165" y="84.0" />
-      <point x="-47.75" y="49.0" />
+      <point x="14.999511218939745" y="-27.0" />
+      <point x="369.763" y="63.887" />
+      <point x="-384.88751074980485" y="63.887" />
+      <point x="-384.88751074980485" y="1123.635" />
+      <point x="361.26348878106023" y="1123.635" />
+      <point x="-0.0" y="49.0" />
     </edge>
     <edge source="galaga_game.Galaga" target="galaga_game.Board" relationship="TO_ONE">
-      <point x="-47.0" y="-71.5" />
-      <point x="168.45489690721644" y="1225.0" />
-      <point x="6.079896907216494" y="1225.0" />
-      <point x="6.079896907216494" y="1215.0" />
-      <point x="-125.0" y="1215.0" />
-      <point x="-125.0" y="692.0" />
-      <point x="53.36726804123708" y="692.0" />
-      <point x="-35.25" y="38.0" />
+      <point x="-94.00048878106026" y="3.589846616023351E-4" />
+      <point x="381.0" y="283.252" />
+      <point x="381.0" y="731.0" />
+      <point x="585.0" y="731.0" />
+      <point x="585.0" y="631.193" />
+      <point x="70.50006203766054" y="-4.1305050012852007E-4" />
     </edge>
     <edge source="galaga_game.Galaga" target="galaga_game.Swarm" relationship="TO_ONE">
-      <point x="-47.0" y="-71.5" />
-      <point x="168.45489690721644" y="1225.0" />
-      <point x="6.079896907216494" y="1225.0" />
-      <point x="6.079896907216494" y="1215.0" />
-      <point x="-114.5" y="1215.0" />
-      <point x="-114.5" y="976.0" />
-      <point x="4.0" y="976.0" />
-      <point x="-45.0" y="60.0" />
+      <point x="93.9995112189398" y="3.589846616023351E-4" />
+      <point x="676.0" y="283.252" />
+      <point x="676.0" y="537.5" />
+      <point x="697.6" y="537.5" />
+      <point x="-0.9510132130465081" y="-60.00018508566177" />
     </edge>
   </edges>
-  <settings layout="Hierarchic" zoom="0.5637886597938144" showDependencies="true" x="325.5" y="737.0" />
-  <SelectedNodes />
+  <settings layout="Hierarchic" zoom="0.6215978928884986" showDependencies="true" x="299.18064971751414" y="492.875" />
+  <SelectedNodes>
+    <node>galaga_server.Ship</node>
+    <node>galaga_game.Ship</node>
+    <node>galaga_game.Bomb</node>
+    <node>galaga_game.Swarm</node>
+  </SelectedNodes>
   <Categories>
-    <Category>Fields</Category>
     <Category>Methods</Category>
-    <Category>Properties</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>

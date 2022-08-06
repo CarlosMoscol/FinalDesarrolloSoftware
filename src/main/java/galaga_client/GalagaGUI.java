@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class GalagaGUI extends JFrame {
+public class GalagaGUI extends JFrame implements GalagaGUI_interfaz {
     //String IP = "192.168.0.27";
     //int PORT = 4444;
 
@@ -129,6 +129,7 @@ public class GalagaGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
+    @Override
     public void setConnectionPanel() {
         Font font = new Font("Arial", Font.BOLD, 16);
         ipAddresTextField.setPreferredSize(new Dimension(170, 30));
@@ -143,6 +144,7 @@ public class GalagaGUI extends JFrame {
         connectionPanel.add(portTextField);
     }
     //
+    @Override
     public void setBoardPanel() {
         boardPanel.removeAll();
         boardPanel.setLayout(new BoxLayout(boardPanel, BoxLayout.Y_AXIS));
@@ -188,18 +190,21 @@ public class GalagaGUI extends JFrame {
         boardPanel.revalidate();
     }
 
+    @Override
     public void setBoardText(String text) {
         boardTextPane.setText(text);
         boardPanel.repaint();
         boardPanel.revalidate();
     }
 
+    @Override
     public void setMessageText(String text) {
         messageTextPane.setText(text);
         boardPanel.repaint();
         boardPanel.revalidate();
     }
 
+    @Override
     public void homeRoom() {
         ipAddresTextField.setEditable(true);
         portTextField.setEditable(true);
@@ -212,6 +217,7 @@ public class GalagaGUI extends JFrame {
         setBoardPanel();
     }
 
+    @Override
     public void waitRoomMaster() {
         ipAddresTextField.setEditable(false);
         portTextField.setEditable(false);
@@ -230,6 +236,7 @@ public class GalagaGUI extends JFrame {
                 "============= Instructions ==============");
     }
 
+    @Override
     public void waitRoomSlave() {
         ipAddresTextField.setEditable(false);
         portTextField.setEditable(false);
@@ -249,6 +256,7 @@ public class GalagaGUI extends JFrame {
         this.requestFocus();
     }
 
+    @Override
     public void startGame() {
         startPanel.remove(startGameButton);
         startPanel.repaint();
@@ -258,6 +266,7 @@ public class GalagaGUI extends JFrame {
         this.requestFocus();
     }
 
+    @Override
     public void setAllFocusable(boolean flag) {
         connectionPanel.setFocusable(flag);
         ipAddressLabel.setFocusable(flag);

@@ -3,38 +3,36 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="-1290.4594532938863" y="-237.74934274034638">java.lang.Runnable</node>
-    <node x="-876.0512796289893" y="-609.555261944219">java.lang.Thread</node>
-    <node x="-812.5512796289893" y="390.94473805578104">galaga_game.Bomb</node>
-    <node x="-405.0512796289893" y="346.94473805578104">galaga_game.Ship</node>
-    <node x="-1098.0512796289893" y="357.94473805578104">galaga_game.Swarm</node>
+    <node x="-358.4887796289894" y="751.7506572596536">galaga_game.Game</node>
+    <node x="79.51122037101061" y="718.7506572596536">galaga_game.Ship</node>
+    <node x="-775.5844532938864" y="65.37565725965345">java.lang.Runnable</node>
+    <node x="-628.4887796289894" y="729.7506572596536">galaga_game.Swarm</node>
+    <node x="-391.4887796289894" y="-237.74934274034638">java.lang.Thread</node>
   </nodes>
   <notes />
   <edges>
     <edge source="galaga_game.Swarm" target="java.lang.Thread" relationship="GENERALIZATION">
       <point x="-0.0" y="-60.0" />
-      <point x="-1008.0512796289893" y="-142.55526194421896" />
+      <point x="-538.4887796289894" y="229.25065725965362" />
       <point x="-213.0" y="-0.0" />
     </edge>
     <edge source="galaga_game.Ship" target="java.lang.Thread" relationship="GENERALIZATION">
       <point x="-72.0" y="-0.0" />
-      <point x="-663.0512796289893" y="417.94473805578104" />
+      <point x="-178.4887796289894" y="789.7506572596536" />
       <point x="-0.0" y="467.0" />
-    </edge>
-    <edge source="galaga_game.Bomb" target="java.lang.Thread" relationship="GENERALIZATION">
-      <point x="-0.0" y="-27.0" />
-      <point x="-99.0" y="467.0" />
     </edge>
     <edge source="java.lang.Thread" target="java.lang.Runnable" relationship="REALIZATION">
       <point x="-211.7163560766603" y="467.0" />
-      <point x="-874.7676357056496" y="-210.74934274034638" />
+      <point x="-390.2051357056497" y="92.37565725965345" />
       <point x="-57.0" y="0.0" />
     </edge>
+    <edge source="galaga_game.Game" target="java.lang.Thread" relationship="GENERALIZATION">
+      <point x="-0.0" y="-38.0" />
+      <point x="-108.0" y="467.0" />
+    </edge>
   </edges>
-  <settings layout="Hierarchic Compact" zoom="0.32989690721649495" showDependencies="false" x="-642.5084949999996" y="446.1509249999999" />
-  <SelectedNodes>
-    <node>galaga_game.Bomb</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Compact" zoom="0.6443298969072166" showDependencies="false" x="52.07199999999966" y="458.7599999999999" />
+  <SelectedNodes />
   <Categories>
     <Category>Methods</Category>
   </Categories>

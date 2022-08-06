@@ -3,171 +3,22 @@
   <ID>JAVA</ID>
   <OriginalElement>galaga_game</OriginalElement>
   <nodes>
-    <node x="121.5" y="-569.0">galaga_game.Game</node>
-    <node x="-40.5" y="-295.5">galaga_game.Ship.Laser</node>
-    <node x="83.55921052631575" y="-754.0">galaga_game.Board</node>
-    <node x="131.3223684210526" y="-340.0">galaga_game.Galaga</node>
-    <node x="126.8223684210526" y="-122.0">galaga_game.Bomb</node>
-    <node x="324.5" y="-580.0">galaga_game.Swarm</node>
-    <node x="-81.5" y="-603.0">galaga_game.Ship</node>
+    <node x="610.819209039548" y="-394.0353107344633">galaga_game.Bomb</node>
+    <node x="401.5338983050847" y="-581.7288135593219">galaga_game.Game</node>
+    <node x="160.34745762711856" y="-394.0353107344633">galaga_game.Ship</node>
+    <node x="422.5338983050847" y="-738.0889830508474">galaga_game.Board</node>
+    <node x="136.6260407374367" y="-918.1002824858756">galaga_game.Galaga</node>
+    <node x="387.08333333333326" y="-394.0353107344633">galaga_game.Swarm</node>
   </nodes>
   <notes />
-  <edges>
-    <edge source="galaga_game.Swarm" target="galaga_game.Board" relationship="TO_ONE">
-      <point x="0.0" y="-71.5" />
-      <point x="414.5" y="-624.0" />
-      <point x="407.3092105263157" y="-624.0" />
-      <point x="407.3092105263157" y="-634.0" />
-      <point x="189.30921052631572" y="-634.0" />
-      <point x="35.25" y="49.5" />
-    </edge>
-    <edge source="galaga_game.Bomb" target="galaga_game.Galaga" relationship="TO_ONE">
-      <point x="66.25" y="-49.5" />
-      <point x="325.5723684210526" y="-143.0" />
-      <point x="515.3157894736842" y="-143.0" />
-      <point x="515.3157894736842" y="-153.0" />
-      <point x="272.3223684210526" y="-153.0" />
-      <point x="47.0" y="83.0" />
-    </edge>
-    <edge source="galaga_game.Galaga" target="galaga_game.Bomb" relationship="TO_ONE">
-      <point x="47.0" y="83.0" />
-      <point x="272.3223684210526" y="-153.0" />
-      <point x="515.3157894736842" y="-153.0" />
-      <point x="515.3157894736842" y="-143.0" />
-      <point x="325.5723684210526" y="-143.0" />
-      <point x="66.25" y="-49.5" />
-    </edge>
-    <edge source="galaga_game.Bomb" target="galaga_game.Board" relationship="TO_ONE">
-      <point x="66.25" y="-49.5" />
-      <point x="325.5723684210526" y="-143.0" />
-      <point x="515.3157894736842" y="-143.0" />
-      <point x="515.3157894736842" y="-153.0" />
-      <point x="559.5" y="-153.0" />
-      <point x="559.5" y="-624.0" />
-      <point x="407.3092105263157" y="-624.0" />
-      <point x="407.3092105263157" y="-634.0" />
-      <point x="189.30921052631572" y="-634.0" />
-      <point x="35.25" y="49.5" />
-    </edge>
-    <edge source="galaga_game.Galaga" target="galaga_game.Swarm" relationship="CREATE">
-      <point x="-47.0" y="-83.0" />
-      <point x="178.3223684210526" y="-362.0" />
-      <point x="5.0" y="-362.0" />
-      <point x="5.0" y="-372.0" />
-      <point x="369.5" y="-372.0" />
-      <point x="-45.0" y="71.5" />
-    </edge>
-    <edge source="galaga_game.Galaga" target="galaga_game.Bomb" relationship="CREATE">
-      <point x="-47.0" y="83.0" />
-      <point x="178.3223684210526" y="-143.0" />
-      <point x="193.0723684210526" y="-143.0" />
-      <point x="-66.25" y="-49.5" />
-    </edge>
-    <edge source="galaga_game.Galaga" target="galaga_game.Ship" relationship="TO_MANY">
-      <point x="47.0" y="-83.0" />
-      <point x="272.3223684210526" y="-362.0" />
-      <point x="440.0592105263157" y="-362.0" />
-      <point x="440.0592105263157" y="-382.0" />
-      <point x="55.75000000000003" y="-382.0" />
-      <point x="45.75" y="94.5" />
-    </edge>
-    <edge source="galaga_game.Game" target="galaga_game.Board" relationship="TO_ONE">
-      <point x="0.0" y="-60.5" />
-      <point x="213.0" y="-624.0" />
-      <point x="407.3092105263157" y="-624.0" />
-      <point x="407.3092105263157" y="-634.0" />
-      <point x="189.30921052631572" y="-634.0" />
-      <point x="35.25" y="49.5" />
-    </edge>
-    <edge source="galaga_game.Galaga" target="galaga_game.Board" relationship="CREATE">
-      <point x="-47.0" y="-83.0" />
-      <point x="178.3223684210526" y="-362.0" />
-      <point x="5.0" y="-362.0" />
-      <point x="5.0" y="-372.0" />
-      <point x="-92.0" y="-372.0" />
-      <point x="-92.0" y="-634.0" />
-      <point x="118.80921052631572" y="-634.0" />
-      <point x="-35.25" y="49.5" />
-    </edge>
-    <edge source="galaga_game.Ship" target="galaga_game.Board" relationship="TO_ONE">
-      <point x="0.0" y="-94.5" />
-      <point x="10.0" y="-624.0" />
-      <point x="407.3092105263157" y="-624.0" />
-      <point x="407.3092105263157" y="-634.0" />
-      <point x="189.30921052631572" y="-634.0" />
-      <point x="35.25" y="49.5" />
-    </edge>
-    <edge source="galaga_game.Ship" target="galaga_game.Ship.Laser" relationship="CREATE">
-      <point x="10.0" y="94.5" />
-      <point x="10.0" y="-38.5" />
-    </edge>
-    <edge source="galaga_game.Galaga" target="galaga_game.Game" relationship="TO_ONE">
-      <point x="47.0" y="-83.0" />
-      <point x="272.3223684210526" y="-362.0" />
-      <point x="440.0592105263157" y="-362.0" />
-      <point x="440.0592105263157" y="-382.0" />
-      <point x="258.75" y="-382.0" />
-      <point x="45.75" y="60.5" />
-    </edge>
-    <edge source="galaga_game.Galaga" target="galaga_game.Game" relationship="CREATE">
-      <point x="-47.0" y="-83.0" />
-      <point x="178.3223684210526" y="-362.0" />
-      <point x="5.0" y="-362.0" />
-      <point x="5.0" y="-372.0" />
-      <point x="167.25" y="-372.0" />
-      <point x="-45.75" y="60.5" />
-    </edge>
-    <edge source="galaga_game.Galaga" target="galaga_game.Ship" relationship="CREATE">
-      <point x="-47.0" y="-83.0" />
-      <point x="178.3223684210526" y="-362.0" />
-      <point x="5.0" y="-362.0" />
-      <point x="5.0" y="-372.0" />
-      <point x="-35.75" y="-372.0" />
-      <point x="-45.75" y="94.5" />
-    </edge>
-    <edge source="galaga_game.Ship.Laser" target="galaga_game.Ship" relationship="INNER_CLASS">
-      <point x="-20.0" y="-38.5" />
-      <point x="-20.0" y="94.5" />
-    </edge>
-    <edge source="galaga_game.Galaga" target="galaga_game.Board" relationship="TO_ONE">
-      <point x="47.0" y="-83.0" />
-      <point x="272.3223684210526" y="-362.0" />
-      <point x="440.0592105263157" y="-362.0" />
-      <point x="440.0592105263157" y="-382.0" />
-      <point x="515.0" y="-382.0" />
-      <point x="515.0" y="-624.0" />
-      <point x="407.3092105263157" y="-624.0" />
-      <point x="407.3092105263157" y="-634.0" />
-      <point x="189.30921052631572" y="-634.0" />
-      <point x="35.25" y="49.5" />
-    </edge>
-    <edge source="galaga_game.Bomb" target="galaga_game.Swarm" relationship="TO_ONE">
-      <point x="66.25" y="-49.5" />
-      <point x="325.5723684210526" y="-143.0" />
-      <point x="515.3157894736842" y="-143.0" />
-      <point x="515.3157894736842" y="-153.0" />
-      <point x="549.0" y="-153.0" />
-      <point x="549.0" y="-392.0" />
-      <point x="459.5" y="-392.0" />
-      <point x="45.0" y="71.5" />
-    </edge>
-    <edge source="galaga_game.Galaga" target="galaga_game.Swarm" relationship="TO_ONE">
-      <point x="47.0" y="-83.0" />
-      <point x="272.3223684210526" y="-362.0" />
-      <point x="440.0592105263157" y="-362.0" />
-      <point x="440.0592105263157" y="-372.0" />
-      <point x="549.0" y="-372.0" />
-      <point x="549.0" y="-392.0" />
-      <point x="459.5" y="-392.0" />
-      <point x="45.0" y="71.5" />
-    </edge>
-  </edges>
-  <settings layout="Hierarchic" zoom="1.1784287616511318" showDependencies="true" x="592.738418079096" y="-206.16101694915255" />
-  <SelectedNodes />
+  <edges />
+  <settings layout="Hierarchic" zoom="0.9427430093209056" showDependencies="false" x="448.9230225988699" y="-532.625" />
+  <SelectedNodes>
+    <node>galaga_game.Galaga</node>
+  </SelectedNodes>
   <Categories>
     <Category>Constructors</Category>
     <Category>Fields</Category>
-    <Category>Inner Classes</Category>
     <Category>Methods</Category>
     <Category>Properties</Category>
   </Categories>
