@@ -46,7 +46,7 @@ public class TCPServer extends Thread {
 
     //Obtener el reques de nuevo ship
     public void replyToNewShipRequest() {
-        clients[numberClients].sendMessage("id " + numberClients); //Show the client their id in the game
+        clients[numberClients].sendMessage("id " + numberClients);
         galagaGameStatus.addShip();
         String newShipPositionsMessage = "players " + numberClients;
         for(Ship ship : galagaGameStatus.ships) {
