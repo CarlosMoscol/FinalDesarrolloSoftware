@@ -8,20 +8,20 @@ class TCPClientTest {
 
     @Test
     void sendMessage() {
-        System.out.println("Testing that the sendMessage method correctly sends the message...");
-        String messageOne= "Wait...";
+        System.out.println("Probando que el método 'sendMessage' envía correctamente el mensaje...");
+        String messageOne= "En espera...";
         client.sendMessage(messageOne);
     }
 
     @Test
     void stopClient() {
-        System.out.println("Testing that the stopClient method successfully stops the client server...");
+        System.out.println("Prueba de que el método 'stopClient' detiene con éxito el servidor del cliente...");
         client.stopClient();
     }
 
     @Test
     void run() {
-        System.out.println("Testing that the run method runs the client server correctly...");
+        System.out.println("Probar que el método de ejecución 'run' el servidor del cliente correctamente...");
         client.run();
     }
 }
