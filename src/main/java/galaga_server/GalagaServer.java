@@ -158,14 +158,3 @@ class Ship {
     }
 
 }
-
-/*class Enemy {
-    public int xPos;
-    public int yPos;
-    public int status;
-    private GalagaGameStatus galagaGameStatus;
-    public void getEnemyStatus() {
-
-    }
-}
- */
