@@ -1,6 +1,4 @@
 package galaga_client;
-
-
 import org.junit.jupiter.api.Test;
 
 class TCPClientTest {
